@@ -1,13 +1,9 @@
 package com.example.tests.steps;
 
-import com.codeborne.selenide.SelenideElement;
 import com.example.framework.config.ConfigProperties;
 import com.example.framework.pages.LoginPage;
 import lombok.extern.slf4j.Slf4j;
 
-import static com.codeborne.selenide.Selenide.sleep;
-import static com.example.framework.config.Timeouts.PAGE_LOAD_TIMEOUT;
-import static com.example.framework.config.Timeouts.POLL_INTERVAL;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Slf4j
