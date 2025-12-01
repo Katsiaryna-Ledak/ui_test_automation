@@ -70,6 +70,7 @@ public class SideBarPage {
         PRIVATE_RACKS("Private Racks"),
         MONITORING("Monitoring"),
         SSL_CERTIFICATES("SSL certificates"),
+        ACCOUNT_SETTINGS("Account settings"),
         IDENTIFY_AND_ACCESS("Identity and Access"),
         BILLING("Billing"),
         REPORTS("Reports"),

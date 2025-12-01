@@ -1,11 +1,14 @@
 package com.example.tests.steps;
 
+import com.codeborne.selenide.SelenideElement;
 import com.example.framework.config.ConfigProperties;
 import com.example.framework.pages.LoginPage;
 import lombok.extern.slf4j.Slf4j;
-import com.codeborne.selenide.SelenideElement;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static com.codeborne.selenide.Selenide.sleep;
+import static com.example.framework.config.Timeouts.PAGE_LOAD_TIMEOUT;
+import static com.example.framework.config.Timeouts.POLL_INTERVAL;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Slf4j
 public class LoginSteps extends BaseSteps {
@@ -26,18 +29,8 @@ public class LoginSteps extends BaseSteps {
         loginPage.clickSignInButton();
     }
 
-    public void verifyLoggedUserName() {
-        SelenideElement userName = loginPage.getUserNameElement();
-        userName.shouldBe(com.codeborne.selenide.Condition.visible);
-        String actualName = userName.getText();
-        log.info("Logged in user: {}", actualName);
-
-        assertEquals(ConfigProperties.get().name(), actualName, "Logged user name is incorrect!");
-    }
-
-    public void verifyLabelIsVisible() {
-        SelenideElement label = loginPage.getWelcomeLabelElement();
-        label.shouldBe(com.codeborne.selenide.Condition.visible);
-        log.info("'Servers.com' label is visible on HomePage");
+    public void shouldBeOnLoginPage() {
+        log.info("Verifying login page is displayed with email and password fields");
+        assertTrue(loginPage.isLoginPageDisplayed(), "Login page is not displayed!");
     }
 }

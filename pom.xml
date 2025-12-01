@@ -19,7 +19,6 @@
       <groupId>com.codeborne</groupId>
       <artifactId>selenide</artifactId>
       <version>7.3.1</version>
-      <scope>test</scope>
     </dependency>
 
     <dependency>
@@ -38,7 +37,7 @@
     <dependency>
       <groupId>io.github.bonigarcia</groupId>
       <artifactId>webdrivermanager</artifactId>
-      <version>5.7.0</version>
+      <version>6.1.0</version>
     </dependency>
 
     <dependency>

@@ -21,6 +21,7 @@ public class SideBarSteps {
             for (SideBarPage.SideBarChildItem child : SideBarPage.SideBarChildItem.values()) {
                 if (child.getParent() == parent) {
                     sideBarPage.clickChild(child);
+                    sleep(300);
                     verifyUrl(child.getUrl());
                 }
             }
@@ -36,6 +37,10 @@ public class SideBarSteps {
             if (currentUrl.contains(expectedUrl)) return;
             sleep(300);
         }
-        assertTrue(WebDriverRunner.url().contains(expectedUrl), "URL mismatch for " + expectedUrl);
+        assertTrue(WebDriverRunner.url().contains(expectedUrl), "Expected URL: " + expectedUrl + "\nActual url was: " + WebDriverRunner.url());
+    }
+
+    public void clickParentOnly(SideBarPage.SideBarParentItem parent) {
+        sideBarPage.openParent(parent);
     }
 }
