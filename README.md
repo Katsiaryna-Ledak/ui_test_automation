@@ -35,10 +35,6 @@ mvn -Dtest=DeleteSubscriptionTest test
 mvn -Dtest=UpdateSubscriptionTest test 
 ```
 
-### 3. Run tests in headless mode
-```
-mvn clean test -Dheadless=true  
-```
 
 ## 📊 Allure Reporting
 This project uses Allure to generate test reports.
