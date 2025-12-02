@@ -87,6 +87,6 @@ allure serve target/allure-results
 
 This command will open the Allure report in your browser.
 
-Example Allure report
+Allure report example:
 
 ![img.png](img.png)
