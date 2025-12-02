@@ -5,6 +5,7 @@ import com.example.framework.driver.DriverManager;
 import com.example.framework.utils.RandomEmailGenerator;
 import com.example.framework.utils.RandomStringsGenerator;
 import com.example.tests.steps.*;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 
@@ -37,6 +38,10 @@ public class BaseTest {
     @BeforeAll
     static void setupDriver() {
         DriverManager.setupDriver();
+        // Allure listener
+        com.codeborne.selenide.logevents.SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
+                .screenshots(true)
+                .savePageSource(false));
     }
 
     @AfterAll

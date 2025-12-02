@@ -52,6 +52,7 @@ public class UpdateSubscriptionTest extends BaseTest {
         contactInfoSteps.verifyContactFieldValue(ContactInfoPage.ContactField.MIDDLE_NAME,
                 GENERATED_MIDDLE_NAME);
     }
+
     @AfterAll
     void deleteSubscriptionAfterAll() {
         try {

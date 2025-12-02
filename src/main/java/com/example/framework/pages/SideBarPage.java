@@ -46,6 +46,7 @@ public class SideBarPage {
         SelenideElement element = getChildElement(child);
         scrollSidebarToElement(element);
         element.shouldBe(visible, Duration.ofSeconds(5)).click();
+        sleep(300);
     }
 
     private void scrollSidebarToElement(SelenideElement element) {

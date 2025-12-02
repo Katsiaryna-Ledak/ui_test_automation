@@ -1,17 +1,18 @@
 package com.example.tests.ui.account_settings.subscriptions;
 
+import com.codeborne.selenide.Selenide;
 import com.example.framework.config.ConfigProperties;
 import com.example.framework.pages.NewContactPage;
 import com.example.framework.pages.SideBarPage;
 import com.example.tests.ui.BaseTest;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.*;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.refresh;
 
+@Slf4j
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class CreateSubscriptionTest extends BaseTest {
 
     @BeforeAll
@@ -40,9 +41,16 @@ public class CreateSubscriptionTest extends BaseTest {
     }
 
     @AfterAll
-    static void deleteSubscription() {
-        refresh();
-        subscriptionsSteps.deleteSubscriptionByEmail(EMAIL);
-        subscriptionsSteps.confirmDeleteSubscription();
+    void deleteSubscriptionAfterAll() {
+        try {
+            Selenide.open(ConfigProperties.get().baseUrl() + "account");
+
+            subscriptionsSteps.deleteSubscriptionByEmail(EMAIL);
+            subscriptionsSteps.confirmDeleteSubscription();
+
+            log.info("Test subscription '{}' deleted successfully", EMAIL);
+        } catch (Exception e) {
+            log.error("Failed to delete test subscription '{}': {}", EMAIL, e.getMessage(), e);
+        }
     }
 }
