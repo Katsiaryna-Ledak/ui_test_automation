@@ -77,49 +77,49 @@ public class NewContactPage {
     }
 
     public void fillMiddleName(String middleName) {
-        log.info("Filling middle name: {}", middleName);
+        log.info("Entering middle name: {}", middleName);
         middleNameInput.shouldBe(visible).clear();
         middleNameInput.setValue(middleName);
     }
 
     public void fillNickname(String nickname) {
-        log.info("Filling nickname: {}", nickname);
+        log.info("Entering nickname: {}", nickname);
         nicknameInput.shouldBe(visible).clear();
         nicknameInput.setValue(nickname);
     }
 
     public void fillComments(String comments) {
-        log.info("Filling comments: {}", comments);
+        log.info("Entering comments: {}", comments);
         commentsInput.shouldBe(visible).clear();
         commentsInput.setValue(comments);
     }
 
     public void fillCompany(String company) {
-        log.info("Filling company: {}", company);
+        log.info("Entering company: {}", company);
         companyInput.shouldBe(visible).clear();
         companyInput.setValue(company);
     }
 
     public void fillJobTitle(String jobTitle) {
-        log.info("Filling job title: {}", jobTitle);
+        log.info("Entering job title: {}", jobTitle);
         jobTitleInput.shouldBe(visible).clear();
         jobTitleInput.setValue(jobTitle);
     }
 
     public void fillJobRole(String jobRole) {
-        log.info("Filling job role: {}", jobRole);
+        log.info("Entering job role: {}", jobRole);
         jobRoleInput.shouldBe(visible).clear();
         jobRoleInput.setValue(jobRole);
     }
 
     public void fillPhone(String phone) {
-        log.info("Filling phone: {}", phone);
+        log.info("Entering phone: {}", phone);
         phoneInput.shouldBe(visible).clear();
         phoneInput.setValue(phone);
     }
 
     public void fillSecondaryEmail(String email) {
-        log.info("Filling secondary email: {}", email);
+        log.info("Entering secondary email: {}", email);
         secondaryEmailInput.shouldBe(visible).clear();
         secondaryEmailInput.setValue(email);
     }

@@ -9,7 +9,7 @@ public class ContactInfoSteps {
     private final ContactInfoPage contactInfoPage = new ContactInfoPage();
 
     public void verifyContactFieldValue(ContactInfoPage.ContactField field, String expectedValue) {
-        log.info("Verify that filed {} has the expected va;lue {}", field, expectedValue);
+        log.info("Verify that filed {} has the expected value {}", field, expectedValue);
         contactInfoPage.verifyFieldValue(field, expectedValue);
     }
 }

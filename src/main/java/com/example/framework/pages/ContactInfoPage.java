@@ -12,6 +12,21 @@ import static com.codeborne.selenide.Selenide.$x;
 @Slf4j
 public class ContactInfoPage {
 
+    public void verifyFieldValue(ContactField field, String expectedValue) {
+        log.info("Verify that field '{}' has value '{}'", field.getLabel(), expectedValue);
+
+        SelenideElement valueElement = $x("//div[text()='" + field.getLabel() + "']//following-sibling::div//span//span")
+                .shouldBe(visible, Duration.ofSeconds(10));
+
+        String actualValue = valueElement.getText();
+        if (!expectedValue.equals(actualValue)) {
+            throw new AssertionError("Field '" + field.getLabel() + "' value mismatch. Expected: '"
+                    + expectedValue + "', but found: '" + actualValue + "'");
+        }
+
+        log.info("Field '{}' value matches expected '{}'", field.getLabel(), expectedValue);
+    }
+
     @Getter
     public enum ContactField {
         FIRST_NAME("First name"),
@@ -32,22 +47,6 @@ public class ContactInfoPage {
         ContactField(String label) {
             this.label = label;
         }
-
-    }
-
-    public void verifyFieldValue(ContactField field, String expectedValue) {
-        log.info("Verify that field '{}' has value '{}'", field.getLabel(), expectedValue);
-
-        SelenideElement valueElement = $x("//div[text()='" + field.getLabel() + "']//following-sibling::div//span//span")
-                .shouldBe(visible, Duration.ofSeconds(10));
-
-        String actualValue = valueElement.getText();
-        if (!expectedValue.equals(actualValue)) {
-            throw new AssertionError("Field '" + field.getLabel() + "' value mismatch. Expected: '"
-                    + expectedValue + "', but found: '" + actualValue + "'");
-        }
-
-        log.info("Field '{}' value matches expected '{}'", field.getLabel(), expectedValue);
     }
 }
 

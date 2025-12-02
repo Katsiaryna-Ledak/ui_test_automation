@@ -18,7 +18,7 @@ public class LoginPage {
     private final SelenideElement signInButton = $x("//button[@type='submit' and .//span[text()='Sign in']]");
     private final SelenideElement cookiesButton = $x("//button[@id='CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll']");
     private final SelenideElement cookieDialog = $x("//div[@id='CybotCookiebotDialog']");
-    SelenideElement cookiesDialog = $x("//div[@id='CybotCookiebotDialog']");
+    private final SelenideElement cookiesDialog = $x("//div[@id='CybotCookiebotDialog']");
 
     public void openLoginPage(String url) {
         log.info("Opening login page via Selenide: {}", url);
@@ -26,6 +26,7 @@ public class LoginPage {
     }
 
     public boolean isLoginPageDisplayed() {
+        log.info("Verify login page is displayed");
         return emailInput.isDisplayed() && passwordInput.isDisplayed();
     }
 
@@ -67,13 +68,11 @@ public class LoginPage {
     public void inputEmail(String email) {
         log.info("Input email: {}", email);
         emailInput.shouldBe(visible).setValue(email);
-        log.info("Email entered successfully");
     }
 
     public void inputPassword(String password) {
         log.info("Input password");
         passwordInput.shouldBe(visible).setValue(password);
-        log.info("Password entered successfully");
     }
 
     public void clickSignInButton() {

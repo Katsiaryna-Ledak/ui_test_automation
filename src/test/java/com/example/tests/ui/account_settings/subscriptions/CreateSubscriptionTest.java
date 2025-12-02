@@ -1,6 +1,5 @@
 package com.example.tests.ui.account_settings.subscriptions;
 
-import com.codeborne.selenide.Selenide;
 import com.example.framework.config.ConfigProperties;
 import com.example.framework.pages.NewContactPage;
 import com.example.framework.pages.SideBarPage;
@@ -23,7 +22,7 @@ public class CreateSubscriptionTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Verify that new subscription can be created")
+    @DisplayName("Verify that new subscription could be created")
     void createSubscriptionTest() {
         homeSteps.verifyLabelIsVisible();
         sideBarSteps.clickParentOnly(SideBarPage.SideBarParentItem.ACCOUNT_SETTINGS);
@@ -43,7 +42,7 @@ public class CreateSubscriptionTest extends BaseTest {
     @AfterAll
     void deleteSubscriptionAfterAll() {
         try {
-            Selenide.open(ConfigProperties.get().baseUrl() + "account");
+            open(ConfigProperties.get().baseUrl() + "account");
 
             subscriptionsSteps.deleteSubscriptionByEmail(EMAIL);
             subscriptionsSteps.confirmDeleteSubscription();

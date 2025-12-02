@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Slf4j
-public class LoginSteps extends BaseSteps {
+public class LoginSteps {
 
     private final LoginPage loginPage = new LoginPage();
 

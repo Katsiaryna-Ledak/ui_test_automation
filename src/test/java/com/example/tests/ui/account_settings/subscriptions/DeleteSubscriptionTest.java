@@ -34,7 +34,7 @@ public class DeleteSubscriptionTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Verify that subscription can be deleted")
+    @DisplayName("Verify that subscription could be deleted")
     void deleteSubscriptionTest() {
         open(ConfigProperties.get().baseUrl() + "account");
 

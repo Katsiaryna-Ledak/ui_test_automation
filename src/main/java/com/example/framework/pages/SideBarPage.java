@@ -11,6 +11,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 @Slf4j
 public class SideBarPage {
+
     private SelenideElement getParentElement(SideBarParentItem parent) {
         String xpath = "//ul//li//span[normalize-space()='" + parent.getTitle() + "']";
         return $x(xpath);

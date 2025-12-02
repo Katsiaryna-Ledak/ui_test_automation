@@ -71,12 +71,12 @@ public class SubscriptionsPage {
     }
 
     public void clickEditIcon() {
-        log.info("Click Edit icon");
+        log.info("Click 'Edit' icon");
         editIcon.shouldBe(visible).click();
     }
 
     public void clickDeleteIconByUserEmail(String email) {
-        log.info("Click Delete icon for user with email: {}", email);
+        log.info("Click 'Delete' icon for user with email: {}", email);
 
         String xpath = String.format(
                 "//a[@title='%s']/ancestor::tr//td//button[@role='button']",

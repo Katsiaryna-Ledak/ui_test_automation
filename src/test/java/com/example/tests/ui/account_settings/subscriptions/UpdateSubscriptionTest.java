@@ -1,6 +1,5 @@
 package com.example.tests.ui.account_settings.subscriptions;
 
-import com.codeborne.selenide.Selenide;
 import com.example.framework.config.ConfigProperties;
 import com.example.framework.pages.ContactInfoPage;
 import com.example.framework.pages.NewContactPage;
@@ -56,7 +55,7 @@ public class UpdateSubscriptionTest extends BaseTest {
     @AfterAll
     void deleteSubscriptionAfterAll() {
         try {
-            Selenide.open(ConfigProperties.get().baseUrl() + "account");
+            open(ConfigProperties.get().baseUrl() + "account");
 
             subscriptionsSteps.deleteSubscriptionByEmail(EMAIL);
             subscriptionsSteps.confirmDeleteSubscription();

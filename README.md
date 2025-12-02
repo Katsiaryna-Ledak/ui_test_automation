@@ -1,6 +1,6 @@
-## **UI Automation Tests for servers.com Portal**
+## **UI Automation Tests for *******.com Portal**
 
-This repository contains UI automated tests for the web portal https://portal.servers.com/
+This repository contains UI automated tests for the web portal https://portal.*******.com/
 .
 The project was developed as part of a technical assignment and covers key portal functionality, including sidebar navigation, account settings, subscription management (CRUD), form validation, and more.
 
