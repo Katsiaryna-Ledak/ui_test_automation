@@ -36,8 +36,9 @@ mvn -Dtest=UpdateSubscriptionTest test
 ```
 
 ## **Credentials**
-If you have login and password, you can enter them in `config.properties` file. For example,
-```declarative
+If you have base_url, login and password, you can enter them in `config.properties` file. For example,
+```
+base_url=your_url
 email=your_email
 password=your_password
 ```
